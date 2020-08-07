@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Question Answer Web App</Title>
+        <meta charset="utf-8" />
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no">
+        <link rel="stylesheet" href="/plugins/fontawesome/css/all.css" type="text/css">
+        <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.css" type="text/css">
+        <link rel="stylesheet" href="/css/questionAnswer.css" type="text/css">
+        <script defer src="/plugins/jquery/jquery.min.js"></script>
+        <script defer src="/plugins/bootstrap/js/bootstrap.js"></script>
+        <script defer src="/js/questionAnswer.js"></script>
+        
+    </head>
+    <body>
+        <header>
+            <div class="jumbotron text-center">
+                <h2 style="font-weight: bold; font-size: 35px; color:navy" >Question Answering</h2>    
+            </div>
+        </header>
+        <div class="bg-image">
+            <div class= "container">
+                <label for="passage" style="font-weight: bold; font-size: 25px; color:navy">Context</label>
+                <textarea id ="passage" placeholder="Passage or context ..." data-toggle="tooltip" data-placement="top" title="Please fill out this field."></textarea>  
+                <br>
+                <label for="questions" style="font-weight: bold;font-size: 25px; color:navy">Questions</label>
+                <input type="text" name="question" class="questions" placeholder="first question" data-toggle="tooltip" data-placement="top" title="Please fill out this field."/>
+                <br><br>
+                <input type="text" name="question" class="questions" placeholder="second question" />
+                <br><br>
+                <label for="answers" style="font-weight: bold; font-size: 25px; color:navy">Answers</label>
+                <input type="text" name="answer" class="answers" readonly/>
+                <br><br>
+                <input type="text" name="answer" class="answers" readonly/>
+                <br><br><br>
+                <div class="text-center">
+                    <button type="button" id="search" class="btn btn-primary" data-loading-text="Search ...">Search</button>
+                    <button id="reset">Reset</button>
+                </div>
+                <div class="warningPopUp text-center" > 
+                    <div class="alert alert-warning alert-dismissible fade show">
+                        <h4 class="alert-heading"><i class="fa fa-warning"></i> Warning!</h4>
+                        <p class="message"></p>
+                    </div>
+                </div>
+                <div class="loading">
+                    <img src="/images/ajax-loader.gif">
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

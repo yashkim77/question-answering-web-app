@@ -1,0 +1,123 @@
+
+.jumbotron { 
+    margin-top: -90px; 
+    padding-bottom: 10px;
+    background-color : gray; 
+}
+body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: relative;
+}
+body::before {
+    background: url("../images/Q&A.png") no-repeat center;
+    content: '';
+    z-index: -1;
+    width: 100%;
+    height: 103%;
+    position:absolute; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+  }
+
+#passage {
+    width: 100%;
+    height: 300px ;
+    display: block;   width:100%;
+    resize: none;
+}
+
+.questions {
+    width: 100%;
+}
+
+.answers {
+    width: 100%;
+}
+
+/* Style for buttons */
+#search {
+    padding: 10px 10px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color : whitesmoke;
+    background-color:navy;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 10px gray;
+}
+  
+#search:hover {background-color:navy}
+  
+#search:active {
+    background-color: navy;
+    box-shadow: 0 10px gray;
+    transform: translateY(4px);
+}
+
+
+
+/* Style for buttons */
+#reset {
+    padding: 10px 10px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color : whitesmoke;
+    background-color:navy;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 10px gray;
+}
+  
+#reset:hover {background-color:navy}
+  
+#reset:active {
+    background-color: navy;
+    box-shadow: 0 10px gray;
+    transform: translateY(4px);
+}
+.warningPopUp {
+    display: none; 
+    position: absolute; 
+    z-index: 10; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 250px;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: auto; /* Enable scroll if needed */
+}
+.alert {
+
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 25%;
+}
+.loading {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    margin: auto;
+    padding-top: 450px;
+    padding-left: 900px;
+    left: 0;
+    top:0;
+    right:0;
+    bottom:0;
+    width: 100%;
+    height: 117%;
+    background: rgba(168, 167, 167, 0.8) 100% 100% no-repeat;
+}
