@@ -1,0 +1,5 @@
+{
+	"modelName" : "bert-large-uncased-whole-word-masking-finetuned-squad",
+	"mongoDB" : "mongodb://localhost/userContextQuestion",
+	"port":4000
+}
