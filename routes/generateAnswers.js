@@ -1,15 +1,10 @@
-const config = require('../config.json');
+const config = require('../config/index.json');
 const express = require('express');
 const { initModel, QAClient } = require('question-answering');
 
 const router = express.Router();
-const RuntimeType = {
-    Remote : "remote",
-    SavedModel : "saved_model",
-    TFJS : "tfjs"
-};
 
-async function answerQuestion(question,passage) {
+async function searchAnswers(question,passage) {
 
     const model = await initModel({ name: config["modelName"]});
     const qaClient = await QAClient.fromOptions({ model });
@@ -23,10 +18,10 @@ router.post('/',async (req,res,next) => {
     let questions = req.body.questions;
     let answers = [];
     for (const question of questions) {
-        let answer = await answerQuestion(question,passage);
+        let answer = await searchAnswers(question,passage);
         answers.push(answer['text']);
-    };
-    res.send(answers);
+    }
+    res.send(answers);   
 });
 
 module.exports = router;

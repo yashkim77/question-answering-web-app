@@ -1,7 +1,7 @@
 {
-    "dbUser":"yash",
-    "dbPassword":"yash@520",
-    "dbHostname":"127.0.0.1",
+    "dbUserName":"yashQuestionWebApp",
+    "dbPassword":"yash5205",
+    "dbHostname":"localhost",
     "dbPort":27017,
     "dbName":"userContextQuestion"
 }

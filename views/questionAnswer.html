@@ -4,6 +4,7 @@
         <Title>Question Answer Web App</Title>
         <meta charset="utf-8" />
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no">
+        <link rel="icon" href="/images/question-mark.png">
         <link rel="stylesheet" href="/plugins/fontawesome/css/all.css" type="text/css">
         <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.css" type="text/css">
         <link rel="stylesheet" href="/css/questionAnswer.css" type="text/css">
@@ -24,23 +25,29 @@
                 <textarea id ="passage" placeholder="Passage or context ..." data-toggle="tooltip" data-placement="top" title="Please fill out this field."></textarea>  
                 <br>
                 <label for="questions" style="font-weight: bold;font-size: 25px; color:navy">Questions</label>
-                <input type="text" name="question" class="questions" placeholder="first question" data-toggle="tooltip" data-placement="top" title="Please fill out this field."/>
+                <input type="text" name="questionOne" class="questions" placeholder="first question" data-toggle="tooltip" data-placement="top" title="Please fill out this field."/>
                 <br><br>
-                <input type="text" name="question" class="questions" placeholder="second question" />
+                <input type="text" name="questionTwo" class="questions" placeholder="second question" />
                 <br><br>
                 <label for="answers" style="font-weight: bold; font-size: 25px; color:navy">Answers</label>
-                <input type="text" name="answer" class="answers" readonly/>
+                <input type="text" name="answerOne" class="answers" readonly/>
                 <br><br>
-                <input type="text" name="answer" class="answers" readonly/>
+                <input type="text" name="answerTwo" class="answers" readonly/>
                 <br><br><br>
                 <div class="text-center">
-                    <button type="button" id="search" class="btn btn-primary" data-loading-text="Search ...">Search</button>
-                    <button id="reset">Reset</button>
+                    <button type="button" id="search">Search</button>
+                    <button type="button" id="reset">Reset</button>
                 </div>
                 <div class="warningPopUp text-center" > 
                     <div class="alert alert-warning alert-dismissible fade show">
                         <h4 class="alert-heading"><i class="fa fa-warning"></i> Warning!</h4>
-                        <p class="message"></p>
+                        <p class="warningMessage"></p>
+                    </div>
+                </div>
+                <div class="errorPopUp text-center" > 
+                    <div class="alert alert-danger alert-dismissible fade show">
+                        <h4 class="alert-heading"><i class="fas fa-exclamation-circle"></i> Error!</h4>
+                        <p class="errorMessage"></p>
                     </div>
                 </div>
                 <div class="loading">

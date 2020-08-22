@@ -1,4 +1,4 @@
-const ContextQuestionAnswer =  require('../models/questionAnswerData');
+const ContextQuestionAnswer =  require('../models/contextQuestionAnswer');
 const express = require('express');
 router = express.Router();
 
