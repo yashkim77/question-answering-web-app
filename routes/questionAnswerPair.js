@@ -1,28 +1,22 @@
-const ContextQuestionAnswer =  require('../models/contextQuestionAnswer');
+const UserContextQuestionAnswer =  require('../services/contextQuestionAnswers')
 const express = require('express');
 router = express.Router();
 
-async function createContextQuestionAnswer(passage,question,answer) {
-    const contextQuestion = new ContextQuestionAnswer({
-        context : passage,
-        questions: question,
-        answers: answer
-    });
-    const result = await contextQuestion.save();
-    return "success";
-}
-
 router.post('/',async (req,res,next) => {
-    try {
-        const passage = req.body.passage;
-        let question = req.body.questions;
-        let answer = req.body.answers;
-        const result = await createContextQuestionAnswer(passage,question,answer);
-        res.send("Success");
+    const passage = req.body.passage;
+    let questions = req.body.questions;
+    let answers = req.body.answers;
+    if (passage === "" || questions.length == 0) {
+        res.send({"error": "Required are empty" });
+        return;
     }
-    catch (ex) {
-        res.status.send(error=err);
+    if (questions.length == 1) {
+        if (answers.length == 2) {
+            answers = answers[0]
+        }
     }
+    const result = await UserContextQuestionAnswer.create(passage,questions,answers);
+    res.status(200).send({"message":"Success"});
 });
 
 module.exports = router;

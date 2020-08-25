@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const config  = require('../config/dbConfig.json')
 const chalk = require('chalk');
+const logger = require('./logger');
 const url = `mongodb://${config['dbHostname']}:${config['dbPort']}/${config['dbName']}`;
 const connected = chalk.bold.cyan;
 const error = chalk.bold.yellow;
@@ -19,12 +20,12 @@ mongoose.connect(url, {
 });
 // When successfully connected
 mongoose.connection.on('connected', function () {
-    console.log('Mongoose default connection open to ' + url);
+    logger.info('Mongoose default connection open to ' + url);
 });
   
 // If the connection throws an error
 mongoose.connection.on('error',function (err) {
-    console.log('Mongoose default connection error: ' + err);
+    logger.log('Mongoose default connection error: ' + err);
 });
 
 // When the connection is disconnected

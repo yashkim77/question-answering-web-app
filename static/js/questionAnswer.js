@@ -1,7 +1,7 @@
 'use strict';
 
 //Method to save the context and question pair in database
-function saveContextQuestionaAnswer(answer) {
+function saveContextQuestionAnswers(answers) {
     let contextQuestionAnswer = {};
     let passage =  $('#passage').val();
     let questions = [];
@@ -11,14 +11,22 @@ function saveContextQuestionaAnswer(answer) {
     });
     contextQuestionAnswer['passage'] = passage;
     contextQuestionAnswer['questions'] = questions;
-    contextQuestionAnswer['answers'] =  answer;
-    $.post('saveContextQuestions',contextQuestionAnswer,function(response){
+    if (questions.length == 1) {
+        if (answers.length == 2) {
+            answers = answers[0]
+        }
+    }
+    contextQuestionAnswer['answers'] =  answers;
+    $.post('saveContextQuestionsAnswers',contextQuestionAnswer,function(response) {
         if(response.hasOwnProperty('error')) {
             //alert(response.error);
         } else {
-            console.log(response);
         }
-    },'json');
+    },'json').done(function() {
+        console.log('done');  
+    }).fail(function (xhr, status, error) {
+       console.log('fail');
+    });
 }
 
 //Method to validate input from user.Context and question 
@@ -55,7 +63,6 @@ function inputValidation() {
 }
 
 function putAnswers(answers) {
-    console.log(answers);
     for (let index=0;index < answers.length;index++) {
         $('.answers').eq(index).val(answers[index]);
     }
@@ -73,11 +80,14 @@ $(document).ready(function () {
         $.post('answers',contextQuestions,function(response){
             if(response.hasOwnProperty('error')) {
                 $(".loading").hide();
+                $(".warningMessage").html(response['error']);
+                $(".warningPopUp").show().delay(4000).fadeOut();
+
             } else {
                 $(".loading").hide();
                 let answers = response;
                 putAnswers(answers);
-                //saveContextQuestionaAnswer(answer);
+                saveContextQuestionAnswers(answers);
             }
         },'json').done(function() {
             $(".loading").hide();   
@@ -95,5 +105,9 @@ $(document).ready(function () {
         $(".questions").each(function() {
             $(this).val('');                    
         });
+        $(".answers").each(function() {
+            $(this).val('');                    
+        });
+
     });
 });

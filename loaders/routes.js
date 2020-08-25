@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const error = require('../middleware/error');
 const home = require('../routes/home');
-const generateAnswers = require('../routes/generateAnswers');
+const answers = require('../routes/answers');
 const saveContextQuestionsAnswers = require('../routes/questionAnswerPair');
 
 module.exports = function(app) {
@@ -12,7 +12,7 @@ module.exports = function(app) {
 
     //routes
     app.use('/',home);
-    app.use('/answers',generateAnswers);
+    app.use('/answers',answers);
     app.use('/saveContextQuestionsAnswers',saveContextQuestionsAnswers);
 
     //Error handler middleware
