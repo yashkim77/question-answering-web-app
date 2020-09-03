@@ -5,7 +5,7 @@ let contextQuestionAnswer = new Schema({
     context: {
         type: String,
         required: true,
-        minlength:25,
+        minlength:50,
     },
     questions: {
         type:[String],

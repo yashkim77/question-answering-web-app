@@ -12,4 +12,6 @@ app.use(express.static(__dirname + '/static'));
 
 //server port
 const port = process.env.PORT || 4000;
-app.listen(port, () => logger.info(`Listening on port ${port}...`));
+const server = app.listen(port, () => logger.info(`Listening on port ${port}...`));
+
+module.exports = server;

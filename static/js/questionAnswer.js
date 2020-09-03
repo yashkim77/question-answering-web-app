@@ -39,6 +39,11 @@ function inputValidation() {
         $(".warningPopUp").show().delay(4000).fadeOut();
         return false;
     }
+    if (contextQuestions['passage'].length < 50) {
+        $(".warningMessage").html('Please fill out the passage field in atleast 50 characters');
+        $(".warningPopUp").show().delay(4000).fadeOut();
+        return false;
+    }
     let questions = [];
     let count = 1;
     let flag = 0;
@@ -52,7 +57,9 @@ function inputValidation() {
                 
         }
         let question = $(this).val();
-        questions.push(question);
+        if (question !== "") {
+            questions.push(question);
+        }
         count++;                    
     });
     if (flag == 1) {
@@ -93,7 +100,8 @@ $(document).ready(function () {
             $(".loading").hide();   
         }).fail(function (xhr, status, error) {
             $(".loading").hide();
-            $(".errorMessage").html('Please try after sometime');
+            let response = xhr['responseJSON']['error'];
+            $(".errorMessage").html(response);
             $(".errorPopUp").show().delay(4000).fadeOut();
         });
         

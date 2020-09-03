@@ -4,7 +4,7 @@
   "description": "Answering question based on passage",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --no-cache  --detectOpenHandles --forceExit"
   },
   "repository": {
     "type": "git",
@@ -37,6 +37,7 @@
     "winston": "^3.3.0"
   },
   "devDependencies": {
-    "jest": "^26.4.2"
+    "jest": "^25.2.2",
+    "supertest": "^4.0.2"
   }
 }
