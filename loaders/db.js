@@ -8,16 +8,25 @@ const error = chalk.bold.yellow;
 const disconnected = chalk.bold.red;
 const termination = chalk.bold.magenta;
 
-mongoose.connect(url, { 
-    auth:{
-    authdb: "admin",
-    user:config['dbUserName'],
-    password:config['dbPassword']
-    },
-    authSource:"admin",
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+if (process.env.NODE_ENV == "production") {
+    mongoose.connect(process.env.PROD_MONGODB,{
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    });
+}
+else {
+    mongoose.connect(url, { 
+        auth:{
+        authdb: "admin",
+        user:config['dbUserName'],
+        password:config['dbPassword']
+        },
+        authSource:"admin",
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    });
+}
+
 // When successfully connected
 mongoose.connection.on('connected', function () {
     logger.info('Mongoose default connection open to ' + url);
