@@ -10,6 +10,10 @@ const termination = chalk.bold.magenta;
 
 if (process.env.NODE_ENV == "production") {
     mongoose.connect(process.env.PROD_MONGODB,{
+        auth:{
+            authdb: "admin"
+        },
+        authSource:"admin",
         useNewUrlParser: true,
         useUnifiedTopology: true
     });
@@ -17,9 +21,9 @@ if (process.env.NODE_ENV == "production") {
 else {
     mongoose.connect(url, { 
         auth:{
-        authdb: "admin",
-        user:config['dbUserName'],
-        password:config['dbPassword']
+            authdb: "admin",
+            user:config['dbUserName'],
+            password:config['dbPassword']
         },
         authSource:"admin",
         useNewUrlParser: true,
