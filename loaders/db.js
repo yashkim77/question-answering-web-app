@@ -33,7 +33,13 @@ else {
 
 // When successfully connected
 mongoose.connection.on('connected', function () {
-    logger.info('Mongoose default connection open to ' + url);
+    if (process.env.NODE_ENV == "production") {
+        logger.info('Mongoose default connection open to mongoDB cluster');
+    }
+    else {
+        logger.info('Mongoose default connection open to'+url);
+    }
+    
 });
   
 // If the connection throws an error
