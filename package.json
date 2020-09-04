@@ -2,9 +2,13 @@
   "name": "question-answering-web-app",
   "version": "1.0.0",
   "description": "Answering question based on passage",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "jest --no-cache  --detectOpenHandles --forceExit"
+    "test":"jest --no-cache  --detectOpenHandles --watchAll --verbose --forceExit",
+    "start":"node server.js"  
+  },
+  "engines": {
+    "node": "12.18.3"
   },
   "repository": {
     "type": "git",
@@ -26,10 +30,12 @@
     "@tensorflow/tfjs-node": "^2.0.1",
     "body-parser": "^1.19.0",
     "chalk": "^4.1.0",
+    "compression": "^1.7.4",
     "cors": "^2.8.5",
     "dot-prop": "^5.2.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
+    "helmet": "^4.1.0",
     "install": "^0.13.0",
     "mongoose": "^5.10.0",
     "nodemon": "^2.0.4",

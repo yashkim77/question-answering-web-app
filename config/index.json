@@ -1,4 +1,4 @@
 {
-	"modelName" : "bert-large-uncased-whole-word-masking-finetuned-squad",
+	"modelName" : "distilbert-base-uncased-distilled-squad",
 	"port":4000
 }

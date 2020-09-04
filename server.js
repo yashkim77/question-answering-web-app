@@ -7,6 +7,7 @@ const app = express();
 require('./loaders/logger');
 require('./loaders/routes')(app);
 require('./loaders/db');
+require('./loaders/prod')(app);
 
 app.use(express.static(__dirname + '/static'));
 

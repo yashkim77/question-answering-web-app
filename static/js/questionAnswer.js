@@ -100,7 +100,13 @@ $(document).ready(function () {
             $(".loading").hide();   
         }).fail(function (xhr, status, error) {
             $(".loading").hide();
-            let response = xhr['responseJSON']['error'];
+            let response;
+            if (xhr['responseJSON']['error']) {
+                response = xhr['responseJSON']['error'];
+            }
+            else {
+                response = "Please try after sometime."
+            }
             $(".errorMessage").html(response);
             $(".errorPopUp").show().delay(4000).fadeOut();
         });
