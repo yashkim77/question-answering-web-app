@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!--stylesheet,plugins and custon script for template-->
         <Title>Question Answer Web App</Title>
         <meta charset="utf-8" />
-        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0,user-scalable = no">
         <link rel="icon" href="/images/question-mark.png">
         <link rel="stylesheet" href="/plugins/fontawesome/css/all.css" type="text/css">
         <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.css" type="text/css">
@@ -14,47 +15,70 @@
         
     </head>
     <body>
+        <!--Header-->
         <header>
             <div class="jumbotron text-center">
                 <h2 style="font-weight: bold; font-size: 35px; color:navy" >Question Answering</h2>    
             </div>
         </header>
-        <div class="bg-image">
-            <div class= "container">
-                <label for="passage" style="font-weight: bold; font-size: 25px; color:navy">Context</label>
-                <textarea id ="passage" placeholder="Passage or context ..." data-toggle="tooltip" data-placement="top" title="Please fill out this field."></textarea>  
-                <br>
-                <label for="questions" style="font-weight: bold;font-size: 25px; color:navy">Questions</label>
-                <input type="text" name="questionOne" class="questions" placeholder="first question" data-toggle="tooltip" data-placement="top" title="Please fill out this field."/>
-                <br><br>
-                <input type="text" name="questionTwo" class="questions" placeholder="second question" />
-                <br><br>
-                <label for="answers" style="font-weight: bold; font-size: 25px; color:navy">Answers</label>
-                <input type="text" name="answerOne" class="answers" readonly/>
-                <br><br>
-                <input type="text" name="answerTwo" class="answers" readonly/>
-                <br><br><br>
-                <div class="text-center">
-                    <button type="button" id="search">Search</button>
-                    <button type="button" id="reset">Reset</button>
-                </div>
-                <div class="warningPopUp text-center" > 
-                    <div class="alert alert-warning alert-dismissible fade show">
-                        <h4 class="alert-heading"><i class="fa fa-warning"></i> Warning!</h4>
-                        <p class="warningMessage"></p>
+        <!--Context-Question-Answer-->
+        <section id="contextQuestionAnswer">
+            <div class="bg-image">
+                <div class= "container">
+                    <label for="passage" style="font-weight: bold; font-size: 25px; color:navy">Context</label>
+                    <textarea id ="passage" placeholder="Passage or context ..." data-toggle="tooltip" data-placement="top" title="Please fill out this field."></textarea>  
+                    <br>
+                    <label for="questions" style="font-weight: bold;font-size: 25px; color:navy">Questions</label>
+                    <input type="text" name="questionOne" class="questions" placeholder="first question" data-toggle="tooltip" data-placement="top" title="Please fill out this field."/>
+                    <br><br>
+                    <input type="text" name="questionTwo" class="questions" placeholder="second question" />
+                    <br><br>
+                    <label for="answers" style="font-weight: bold; font-size: 25px; color:navy">Answers</label>
+                    <input type="text" name="answerOne" class="answers" readonly/>
+                    <br><br>
+                    <input type="text" name="answerTwo" class="answers" readonly/>
+                    <br><br><br>
+                    <div class="text-center">
+                        <button type="button" id="search">Search</button>
+                        <button type="button" id="reset">Reset</button>
                     </div>
-                </div>
-                <div class="errorPopUp text-center" > 
-                    <div class="alert alert-danger alert-dismissible fade show">
-                        <h4 class="alert-heading"><i class="fas fa-exclamation-circle"></i> Error!</h4>
-                        <p class="errorMessage"></p>
+                    <div class="warningPopUp text-center" > 
+                        <div class="alert alert-warning alert-dismissible fade show">
+                            <h4 class="alert-heading"><i class="fa fa-warning"></i> Warning!</h4>
+                            <p class="warningMessage"></p>
+                        </div>
                     </div>
-                </div>
-                <div class="loading">
-                    <img src="/images/ajax-loader.gif">
+                    <div class="errorPopUp text-center" > 
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            <h4 class="alert-heading"><i class="fas fa-exclamation-circle"></i> Error!</h4>
+                            <p class="errorMessage"></p>
+                        </div>
+                    </div>
+                    <div class="loading">
+                        <img src="/images/ajax-loader.gif">
+                    </div>
                 </div>
             </div>
-        </div>
-
+        </section>
+        <br><br><br>
+        <!--Footer-->
+        <footer>
+            <div class="social">
+                <div class="container">
+                    <div class = "row">
+                        <div class="col-md-11">
+                            <ul class="list-inline-social-buttons" style="text-align: center">
+                                <li class="list-inline-item">
+                                    <a href="https://www.linkedin.com/in/yashkimtani77/"><img src="/images/icons-linkedin.png"/></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://github.com/yashkim77/"><img src="/images/icons-github.png"/></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
