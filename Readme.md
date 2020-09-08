@@ -1,5 +1,5 @@
 # Question Answering Web App
-Question Answering Web App is a web application used to answer question-based on a given context or passage
+Question Answering Web App is a web application used to answer question-based on a given context or passage.
 
 I am using Hugging Face pretrained DistilBERT model trained on SQuAD. DistilBERT is a small, fast, cheap and light Transformer model trained by distilling Bert base. It has 40% less parameters than bert-base-uncased, runs 60% faster while preserving over 95% of Bert’s performances as measured on the GLUE language understanding benchmark.
 
