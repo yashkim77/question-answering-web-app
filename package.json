@@ -4,8 +4,8 @@
   "description": "Answering question based on passage",
   "main": "server.js",
   "scripts": {
-    "test":"jest --no-cache  --detectOpenHandles --watchAll --verbose --forceExit",
-    "start":"node server.js"  
+    "test": "jest --no-cache  --detectOpenHandles --watchAll --verbose --forceExit",
+    "start": "node server.js"
   },
   "engines": {
     "node": "12.18.3"
@@ -28,6 +28,7 @@
   "homepage": "https://github.com/yashkim77/question-answering-web-app#readme",
   "dependencies": {
     "@tensorflow/tfjs-node": "^2.0.1",
+    "bl": "^2.2.1",
     "body-parser": "^1.19.0",
     "chalk": "^4.1.0",
     "compression": "^1.7.4",
@@ -39,6 +40,7 @@
     "install": "^0.13.0",
     "mongoose": "^5.10.0",
     "nodemon": "^2.0.4",
+    "npm-check-updates": "^8.1.1",
     "question-answering": "^3.0.0",
     "winston": "^3.3.0"
   },
