@@ -1,7 +1,0 @@
-{
-    "dbUserName":"XXXXX",
-    "dbPassword":"XXXXX",
-    "dbHostname":"localhost",
-    "dbPort":27017,
-    "dbName":"userContextQuestionAnswer"
-}
